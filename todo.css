@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    box-sizing: border-box;
+    font-family:'Poppins', sans-serif ;
+    /* overflow-y: hidden; */
+}
+
+html, body{
+    /* height: 100%; */
+    overflow-y: hidden;
+}
+body{
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background: url(/images/snow.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow-y: hidden;
+    align-items: center;
+    justify-content: center;
+    /* background: rgb(182, 102, 219); */
+}
+h1{
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 1 0px;
+    color:black;
+    text-shadow: 0 0 5px white, 0 0 7px white;
+    
+}
+.wrapper{
+    position: absolute;
+    max-width: 500px;
+    /* min-height: 350px; */
+    margin: 180px auto;
+    /* padding: 28px 0 30px; */
+    /* background: #0f0f0f; */
+    border-radius: 7px;
+    padding: 28px 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    transform: translateY(-0%);
+}
+.task-input{
+    max-height:52px ;
+    padding: 0 25px;
+    position: relative;
+}
+.task-input .pen{
+    position: absolute;
+    display: flex;
+    transform: translate(10px,40%);
+    align-items: center;
+}
+
+/* Apply the animation to the GIF element */
+#gif {
+    
+    animation: rotate 2s linear infinite;
+    cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
+}
+
+ /* Task input container style */
+ .task-input img{
+    position: absolute;
+    display: flex;
+    transform: translate(340px,-102%);
+    align-items: center;
+}
+
+/* Placeholder style */
+.task-input input::placeholder {
+    padding-right: 30px; /* Adjust the padding to provide space for the animated icon */
+}
+.task-input input{
+    height: 35px;
+    width: 100%; 
+    outline: none;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    padding: 0 40px 0 40px; 
+}
+.task-input input::placeholder{
+    color: #8a888d;
+}
+.controls, li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.controls{
+    padding: 18px 25px;
+    border-bottom: 1px solid #ccc;
+    color:rgb(217, 219, 54) ;
+}
+.filters span{
+    cursor: pointer;
+    margin: 0 8px;
+    font-size: 17px;
+}
+.filters span:first-child{
+    margin-left: 0;
+}
+.filters span.active{
+    color: rgb(201, 221, 218);
+}
+.controls .clear-btn{
+    outline: none;
+    border: none;
+    color:black;
+    cursor: pointer;
+    font-size: 13px;
+    border-radius: 4px;
+    padding: 7px 13px;
+    background:  rgb(201, 221, 218);
+}
+.task-box{
+    color: white;
+    margin: 0px 25px;
+    overflow: auto;
+    max-height: 280px;
+    width: 380px;
+    overflow-x: hidden;
+    padding: 0px;
+}
+.task-box::-webkit-scrollbar {
+    width: 6px;               /* width of the entire scrollbar */
+  }
+  .task-box::-webkit-scrollbar-track {
+    background: rgb(217, 219, 54); 
+    border-radius: 20px;          /* color of the tracking area */
+  }
+  
+  .task-box::-webkit-scrollbar-thumb {
+    background-color: rgb(17, 17, 15);    /* color of the scroll thumb */
+    border-radius: 5px;       /* roundness of the scroll thumb */
+  }
+  
+.task-box .task{
+    list-style: none;
+    font-size: 17px;
+    margin-bottom: 0px;
+    /* padding-bottom: 16px; */
+    border-bottom: 1px solid #999292;
+}
+.task-box .task:last-child{
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+.task label{
+    display: flex;
+}
+.task label p.checked{
+    text-decoration: line-through;
+}
+.task label input{
+    margin-top: 1px;
+    margin-right: 12px;
+    cursor: pointer;
+}
+.task .settings{
+    cursor: pointer;
+    position: relative;
+}
+
+.settings .task-menu{
+    position: absolute;
+    padding: 5px 0;
+    right: -5px;
+    bottom: -65px;
+    z-index: 2;
+    transform: scale(0);
+    border-radius: 4px;
+    background: #fff;
+    transform-origin: top right;
+    transition: transform 0.2s ease;
+    box-shadow: 0 0 6px rgba(0,0,0,0.15);
+}
+.task.last-task label:last-child{
+    position: relative;
+}
+.task.last-task .settings .task-menu{
+    bottom: -15px;
+}
+.settings .task-menu.show{
+    transform: scale(1);
+}
+.task label:last-child{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.task-menu li{
+    color: black;
+    height: 25px;
+    font-size: 16px;
+    padding: 17px 15px;
+    margin-bottom: 2px;
+    justify-content: flex-start;
+}
+.task-menu:last-child{
+    margin-bottom: 0;
+}
+
+.task-menu li:hover{
+    background: #c8cf85;
+}
+.task-menu li i{
+    padding-right: 10px;
+}
+.notification {
+    width: 25%;
+    border-radius: 8px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px 35px ;
+    color: #fff;
+    font-size: 18px;
+    position:fixed;
+    bottom: 88%;
+    min-width :45px;
+}
+
+.success {
+    background-color: rgb(46, 116, 6);
+}
+.complete {
+    background-color: rgb(46, 116, 6);
+}
+.warning {
+    background-color: rgb(252, 202, 64);
+    color: black;
+}
+
+.danger {
+    background-color: rgb(219, 15, 15);
+}
+
+/* Style for the overlay background */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /*Ensure it appears above other elements */
+}
+
+/* Style for the modal popup */
+.popup {
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border-radius: 10px;
+    animation: fadeIn 0.5s ease-in-out;
+    /* width: 80%;
+    height:30%; */
+}
+
+.overlay.show {
+    display: flex;
+}
+body.popup-open {
+    overflow: hidden;
+}
+
+body.popup-open .overlay {
+    position: fixed;
+}
+
+/* Style for the modal content (text and buttons) */
+.popup p {
+    margin-bottom: 10px;
+    text-align: center;
+}
+/* Style for the OK and Cancel buttons */
+.btn {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-ok {
+    background-color: #4caf50; /* Green */
+    color: #fff;
+}
+
+.btn-cancel {
+    background-color: #f44336; /* Red */
+    color: #fff;
+}
+ /* Animation */
+ @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+/* Hover effect for buttons */
+.btn:hover {
+    opacity: 0.8;
+}

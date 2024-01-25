@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="css/todo.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+</head>
+<body>
+    <p class="notification"></p>
+    <div class="wrapper">
+        <h1>Todo List</h1>
+        <div class="task-input">
+            <img src="pen-solid.svg" alt="icon" class="pen" width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+            <input type="text" placeholder="Add a new task">
+            <img src="images/save.gif" alt="Animated Icon" class="icon" id="gif" width="35" height="33" viewBox="0 0 16 16" fill="currentColor">
+        </div>
+
+        <div class="controls">
+            <div class="filters">
+                <span id="all" class="active"><b>All</b></span>
+                <span id="pending"><b>Pending</b></span>
+                <span id="completed"><b>Completed</b></span>
+            </div>
+            <button class="clear-btn" onclick="showPopup()">Clear All</button>
+        </div>
+        <!-- For ClearAll popup -->
+        <div id="confirmationPopup" class="overlay">
+            <div class="popup">
+                <p>Are you sure you want to clear all tasks?</p>
+                <button class="btn btn-ok" onclick="confirmClear()">Ok</button>
+                <button class="btn btn-cancel" onclick="hidePopup()">Cancel</button>
+            </div>
+        </div>        
+        <!-- For update popup -->
+        <div id="statusUpdateOverlay" class="overlay">
+            <div class="popup">
+                <p>Are you sure you want to update the task status?</p>
+                <button class="btn btn-ok" onclick="updateStatus()">OK</button>
+                <button class="btn btn-cancel" onclick="cancelStatusUpdate()">Cancel</button>
+            </div>
+        </div>
+        <!-- For delete popup -->
+        <div id="deleteConfirmationOverlay" class="overlay">
+            <div class="popup">
+                <p id="taskDetails">Are you sure you want to delete the task?</p><br>
+                <button class="btn btn-ok" onclick="confirmDeleteTask()">OK</button>
+                <button class="btn btn-cancel" onclick="cancelDeleteTask()">Cancel</button>
+            </div>
+        </div>
+        <ul class="task-box"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
